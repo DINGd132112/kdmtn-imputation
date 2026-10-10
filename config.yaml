@@ -1,0 +1,44 @@
+# K-DMTN Configuration
+# =====================
+# Multi-dataset support: specify a list of dataset names
+# Available datasets:
+#   physionet2012, physionet2019, beijing_air_quality, electricity,
+#   etth1, ettm1, italy_air_quality, pems_traffic, solar_alabama, random_walk
+
+datasets:
+  - physionet2012
+  - beijing_air_quality
+  - electricity
+  - etth1
+  - ettm1
+  - italy_air_quality
+  - pems_traffic
+  - solar_alabama
+  - random_walk
+  # - physionet2019  # requires special handling, uncomment if needed
+
+# Quick test mode: set true for fast debugging with subsampled data
+quick_test: false
+quick_n_samples: 200
+
+# Training hyperparameters (经两阶段超参搜索优化, 见 results/best_hyperparams.json)
+batch_size: 32
+d_model: 64
+num_layers: 2
+num_heads: 4
+K: 3
+top_Kf: 8
+lambda_t: 0.1
+lambda_s: 0.1
+lambda_c: 0.1
+lambda_final: 0.5
+epochs: 200
+lr: 0.0005
+weight_decay: 0.00001
+
+# Early stopping: stop if val_mae does not improve for this many epochs
+early_stop_patience: 10
+
+# Paths
+save_dir: saved_models
+log_dir: logs

@@ -1,0 +1,18 @@
+# Core scientific stack — versions verified against the environment that
+# produced the results reported in the paper.
+torch>=2.0
+numpy>=1.21
+pandas>=1.4
+scikit-learn>=1.0
+
+# Baselines (CSDI, PatchTST, SegRNN, iTransformer, TimeMixer++, TimesNet,
+# Autoformer) are all run through the unified PyPOTS toolbox.
+pypots>=1.5
+
+# Figure and table generation
+matplotlib>=3.5
+openpyxl>=3.0
+
+# Utilities
+tqdm>=4.64
+PyYAML>=6.0
